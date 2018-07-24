@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  localstack:
+    image: "wolfgangmeyers/localstack_ngrep"
+    ports:
+      # Add exposed ports here
+      - "4569:4569" # dynamodb
+      - "4572:4572" # S3
+    environment:
+      # Add services here
+      # See https://github.com/localstack/localstack
+      - SERVICES=s3,dynamodb
